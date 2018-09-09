@@ -51,15 +51,21 @@ componentDidMount() {
 
     api.fetchPopularRepos(lang)
     .then(function(repos) {
-      console.log(repos);
-    });
+      this.setState(function() {
+        return {
+          repos: repos,
+        }
+      })
+    }.bind(this));
   }
   render() {
     return (
       <div>
         <SelectLanguage
           selectedLanguage={this.state.selectedLanguage}
-          onSelect={this.updateLanguage} />
+          onSelect={this.updateLanguage}
+        />
+        {JSON.stringify(this.state.repos, null, 2)}
       </div>
     )
   }

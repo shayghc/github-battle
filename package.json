@@ -10,12 +10,17 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "SET NODE_ENV='production' && webpack",
+    "firebase-init": "firebase login && firebase init",
+    "deploy": "npm run build && firebase deploy",
+    "add": "npm run firebase use --add"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
     "query-string": "^6.1.0",
     "react": "^16.5.0",
@@ -28,6 +33,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.2",
     "css-loader": "^1.0.0",
+    "firebase-tools": "^4.2.1",
     "html-webpack-plugin": "^3.2.0",
     "install": "^0.12.1",
     "npm": "^6.4.1",

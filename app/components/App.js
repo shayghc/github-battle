@@ -5,6 +5,8 @@ var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
 var Switch = ReactRouter.Switch;
 var Nav = require('./Nav');
+'use strict'
+
 var Home = require('./Home');
 var Battle = require('./Battle');
 var Results = require('./Results');

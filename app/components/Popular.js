@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import Loading from './Loading';
 
+
 function SelectLanguage ({ selectedLanguage, onSelect }) {
   const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'];
   return (
@@ -61,14 +62,14 @@ class Popular extends React.Component {
   componentDidMount() {
     this.updateLanguage(this.state.selectedLanguage)
   }
-  updateLanguage = (lang) =>  {
+  updateLanguage = async (lang) =>  {
     this.setState(() => ({
       selectedLanguage: lang,
       repos: null
-  }));
+    }));
 
-  fetchPopularRepos(lang)
-    .then((repos) => this.setState(() => ({ repos })));
+    const repos = await fetchPopularRepos(lang)
+    this.setState(() => ({ repos }))
   }
 
   render() {

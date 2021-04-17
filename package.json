@@ -23,7 +23,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
+    "@babel/polyfill": "^7.12.1",
     "query-string": "^6.1.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
